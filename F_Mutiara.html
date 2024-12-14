@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chek Transaksi</title>
+    <link rel="stylesheet" href="Mutiara.css">
+</head>
+<body>
+    
+    <style>
+        body{
+                background-image: url(MA.png);
+                height:100vh ;
+                background-size: cover;
+                background-position: center;
+                min-height: 100px;
+
+        }   
+    </style>
+    
+</body>
+</html>
+<form action="Submit_mutiara.php" method="POST" onsubmit="return validateform()" >
+    <p style="color: black; font-family: 'Times New Roman';"><strong>Nama:</p> <input type="text" name="username" required>
+    <p style="color: black; font-family: 'Times New Roman';"><strong>Email:</p> <input type="email" name="email" required>
+    <p style="color: black; font-family: 'Times New Roman';"><strong>Password:</p> <input type="password" name="password" id="password" required>
+    <br>
+    <!-- Checkbox dan Input Jumlah untuk Barang -->
+     <tr>
+        <td style="color:red; font-size:50px;">Barang :</td>
+        <td>
+            <div>
+                <input type = "checkbox" name="barang[]" value="Indomie Goreng - Rp3.500" id="Indomie Goreng" >
+                <label for="Indomie Goreng" style="color: black; font-family: 'Times New Roman';">Indomie Goreng - Rp3.500</label>
+                <input type="number" name="jumlah[]" placeholder="Jumlah" min="1" style="width: 80px">
+            </div>
+            <div>
+                <input type = "checkbox" name="barang[]" value="Indomie Soto - Rp3.000" id="Indomie Soto">
+                <label for="Indomie Soto" style="color: black; font-family: 'Times New Roman';">Indomie Soto - Rp3.000</label>
+                <input type="number" name="jumlah[]" placeholder="Jumlah" min="1" style="width: 80px">
+            </div>
+            <div>
+                <input type = "checkbox" name="barang[]" value="Indomie Ayam Bawang - Rp3.000" id="pasta">
+                <label for="Indomie Ayam Bawang" style="color:black; font-family: 'Times New Roman';">Indomie Ayam Bawang - Rp3.000</label>
+                <input type="number" name="jumlah[]" placeholder="Jumlah" min="1" style="width: 80px">
+            </div>
+        </td>
+     </tr>
+    <input type="submit" value="Submit">
+    <a href="Lihatdata_mutiara.php">Lihat Data</a>
+</form>
+
+<script>
+    function validateform() {
+        var password = document.getElementById("password").value;
+        if (password.length < 6) {
+            alert("Password harus memiliki minimal 6 karakter");
+            return false;
+        }
+        return true;
+    }
+</script>
